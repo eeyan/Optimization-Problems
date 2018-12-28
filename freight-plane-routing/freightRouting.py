@@ -99,7 +99,7 @@ for k in range( noDays ):
 myModel.update()
 
 # write model to file
-myModel.write(filename = "final.lp")
+myModel.write(filename = "output.lp")
 
 # optimize
 myModel.optimize()

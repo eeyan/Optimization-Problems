@@ -3,14 +3,14 @@ import csv
 
 # import cost data - CSV file with no header and costs replacing referees stated preferences
 # costs were implemented as "yes" = 1, "maybe" = 2, "no" = 5, and "conflict" was set to have a cost of 1000 to ensure it wouldn't be a chosen decision in the optimal solution
-with open('hw10_data.csv', 'rb') as csvfile:
+with open('preferences_data.csv', 'rb') as csvfile:
     costs = [list(map(int,rec)) for rec in csv.reader(csvfile, delimiter=',')]
 
 noPapers = len(costs)
 noReferees = len(costs[0])
 
 # create model
-myModel = Model("hw10")
+myModel = Model()
 
 # create variables
 myVars = [ [0 for i in range ( noPapers )] for j in range (noReferees) ]
